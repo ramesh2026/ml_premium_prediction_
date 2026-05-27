@@ -1,18 +1,10 @@
 # codebasics ML course: codebasics.io, all rights reserverd
+import joblib
 
-import pickle
-
-with open("artifacts/model_young.joblib", "rb") as f:
-    model_young = pickle.load(f)
-
-with open("artifacts/model_rest.joblib", "rb") as f:
-    model_rest = pickle.load(f)
-
-with open("artifacts/scaler_young.joblib", "rb") as f:
-    scaler_young = pickle.load(f)
-
-with open("artifacts/scaler_rest.joblib", "rb") as f:
-    scaler_rest = pickle.load(f)
+model_young = joblib.load("artifacts/model_young.joblib")
+model_rest = joblib.load("artifacts/model_rest.joblib")
+scaler_young = joblib.load("artifacts/scaler_young.joblib")
+scaler_rest = joblib.load("artifacts/scaler_rest.joblib")
     
 def calculate_normalized_risk(medical_history):
     risk_scores = {
