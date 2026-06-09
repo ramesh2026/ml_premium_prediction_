@@ -1,8 +1,11 @@
 # codebasics ML course: codebasics.io, all rights reserverd
-
 import streamlit as st
+
+st.write("APP STARTED")
+
 from prediction_helper import predict
 
+st.write("HELPER IMPORTED")
 # Define the page layout
 st.title('Health Insurance Cost Predictor')
 
@@ -76,3 +79,4 @@ input_dict = {
 if st.button('Predict'):
     prediction = predict(input_dict)
     st.success(f'Predicted Health Insurance Cost: {prediction}')
+st.write("UI LOADED")
