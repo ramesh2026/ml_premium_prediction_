@@ -6,10 +6,19 @@ import joblib
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARTIFACTS_DIR = os.path.join(BASE_DIR, "artifacts")
 
+print("Loading model_young")
 model_young = joblib.load(os.path.join(ARTIFACTS_DIR, "model_young.joblib"))
+
+print("Loading model_rest")
 model_rest = joblib.load(os.path.join(ARTIFACTS_DIR, "model_rest.joblib"))
+
+print("Loading scaler_young")
 scaler_young = joblib.load(os.path.join(ARTIFACTS_DIR, "scaler_young.joblib"))
+
+print("Loading scaler_rest")
 scaler_rest = joblib.load(os.path.join(ARTIFACTS_DIR, "scaler_rest.joblib"))
+
+print("All models loaded")
     
 def calculate_normalized_risk(medical_history):
     risk_scores = {
